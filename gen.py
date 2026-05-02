@@ -61,7 +61,7 @@ class PointFlowModel(nn.Module):
 
 
 @torch.no_grad()
-def sample(model, n, n_points=128, steps=100, device='cpu'):
+def sample(model, n, n_points=128, steps=10, device='cpu'):
     model.eval()
     x = torch.randn(n, n_points, 2, device=device)
     dt = 1.0 / steps
